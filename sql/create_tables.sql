@@ -1,0 +1,55 @@
+CREATE TABLE units(
+    id SERIAL PRIMARY KEY,
+    name TEXT NOT NULL
+);
+
+CREATE TABLE products (
+    id SERIAL PRIMARY KEY,
+    name TEXT NOT NULL,
+    price INT NOT NULL,
+    unit_id INT NULL NULL DEFAULT 0 REFERENCES units(id) ON DELETE SET DEFAULT ON UPDATE CASCADE
+);
+
+CREATE TABLE accounts (
+    id SERIAL PRIMARY KEY,
+    account VARCHAR(20) NOT NULL,
+    bank_name TEXT NOT NULL,
+    bank_identity_number VARCHAR(9) NOT NULL
+);
+
+CREATE TABLE organizations (
+    id SERIAL PRIMARY KEY,
+    name TEXT NOT NULL,
+    address TEXT NOT NULL,
+    account_id INT NOT NULL REFERENCES accounts(id) ON DELETE RESTRICT ON UPDATE CASCADE,
+    chief TEXT NOT NULL,
+    financial_chief TEXT NOT NULL
+);
+
+CREATE TABLE customers (
+    id SERIAL PRIMARY KEY,
+    name TEXT NOT NULL
+);
+
+CREATE TABLE proxies (
+    id SERIAL PRIMARY KEY,
+    organization_id INT NOT NULL REFERENCES organizations(id) ON DELETE RESTRICT ON UPDATE CASCADE,
+    customer_id INT NOT NULL REFERENCES customers(id) ON DELETE RESTRICT ON UPDATE CASCADE,
+    employee_id INT NULL NULL REFERENCES employees(id) ON DELETE RESTRICT ON UPDATE CASCADE,
+    date_of_issue DATE NOT NULL,
+    is_valid_until DATE NOT NULL
+);
+
+CREATE TABLE proxy_bodies (
+    id SERIAL PRIMARY KEY,
+    product_id INT NOT NULL REFERENCES products(id) ON DELETE RESTRICT ON UPDATE CASCADE,
+    proxy_id INT NULL NULL REFERENCES proxies(id) ON DELETE RESTRICT ON UPDATE CASCADE,
+    product_amount INT NOT NULL
+);
+
+CREATE TABLE proxy_bodies (
+    id SERIAL PRIMARY KEY,
+    product_id INT NOT NULL REFERENCES products(id) ON DELETE RESTRICT ON UPDATE CASCADE,
+    proxy_id INT NULL NULL REFERENCES proxies(id) ON DELETE RESTRICT ON UPDATE CASCADE,
+    product_amount INT NOT NULL
+);
