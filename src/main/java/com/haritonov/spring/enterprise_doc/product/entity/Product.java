@@ -27,5 +27,6 @@ public class Product {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "unit_id")
+    @NotNull
     private Unit unit;
 }
