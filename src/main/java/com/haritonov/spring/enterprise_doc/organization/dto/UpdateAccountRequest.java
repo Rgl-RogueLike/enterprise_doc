@@ -1,17 +1,18 @@
 package com.haritonov.spring.enterprise_doc.organization.dto;
 
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
 @Data
 public class UpdateAccountRequest {
 
-    @NotNull(message = "Account cannot be empty")
+    @NotBlank(message = "Account cannot be empty")
     private String account;
 
-    @NotNull(message = "Bank name cannot be empty")
+    @NotBlank(message = "Bank name cannot be empty")
     private String bankName;
 
-    @NotNull(message = "Bank identity number cannot be empty")
+    @NotBlank(message = "Bank identity number cannot be empty")
     private String bankIdentityNumber;
 }

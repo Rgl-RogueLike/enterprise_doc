@@ -1,5 +1,6 @@
 package com.haritonov.spring.enterprise_doc.product.dto;
 
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
 import lombok.Data;
@@ -7,7 +8,7 @@ import lombok.Data;
 @Data
 public class CreateProductRequest {
 
-    @NotNull(message = "Name cannot be empty")
+    @NotBlank(message = "Name cannot be empty")
     private String name;
 
     @NotNull(message = "Price cannot be empty")
