@@ -6,10 +6,12 @@ import com.haritonov.spring.enterprise_doc.organization.dto.UpdateAccountRequest
 import com.haritonov.spring.enterprise_doc.organization.entity.Account;
 import com.haritonov.spring.enterprise_doc.organization.repository.AccountRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Service
 public class AccountServiceImpl implements AccountService{
 
     @Autowired

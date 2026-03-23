@@ -6,10 +6,12 @@ import com.haritonov.spring.enterprise_doc.product.dto.UpdateUnitRequest;
 import com.haritonov.spring.enterprise_doc.product.entity.Unit;
 import com.haritonov.spring.enterprise_doc.product.repository.UnitRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Service
 public class UnitServiceImpl implements UnitService{
 
     @Autowired
