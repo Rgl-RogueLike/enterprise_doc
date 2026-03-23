@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-public class OrganizationServiceImpl implements OrganizationService{
+public class OrganizationServiceImpl implements OrganizationService {
 
     @Autowired
     private OrganizationRepository organizationRepository;
@@ -30,7 +30,7 @@ public class OrganizationServiceImpl implements OrganizationService{
         response.setChief(organization.getChief());
         response.setFinancialChief(organization.getFinancialChief());
 
-        if(organization.getAccount() != null) {
+        if (organization.getAccount() != null) {
             response.setAccountNumber(organization.getAccount().getAccount());
             response.setBankName(organization.getAccount().getBankName());
         }

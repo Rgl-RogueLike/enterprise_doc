@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-public class UnitServiceImpl implements UnitService{
+public class UnitServiceImpl implements UnitService {
 
     @Autowired
     UnitRepository unitRepository;
