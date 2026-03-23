@@ -38,7 +38,8 @@ public class UnitServiceImpl implements UnitService{
     public UnitResponse create(CreateUnitRequest request) {
         Unit unit = new Unit();
         unit.setName(request.getName());
-        return mapToResponse(unit);
+        Unit savedUnit = unitRepository.save(unit);
+        return mapToResponse(savedUnit);
     }
 
     @Override
