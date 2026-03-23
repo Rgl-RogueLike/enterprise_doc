@@ -1,7 +1,6 @@
 package com.haritonov.spring.enterprise_doc.organization.dto;
 
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
 @Data
