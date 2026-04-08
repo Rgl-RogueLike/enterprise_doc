@@ -31,6 +31,18 @@ CREATE TABLE customers (
     name TEXT NOT NULL
 );
 
+CREATE TABLE employees (
+    id SERIAL PRIMARY KEY,
+    first_name TEXT NOT NULL,
+    last_name TEXT NOT NULL,
+    middle_name TEXT NOT NULL,
+    post TEXT NOT NULL,
+    passport_series VARCHAR(4) NOT NULL,
+    passport_number VARCHAR(6) NOT NULL,
+    passport_issued_by TEXT NOT NULL,
+    passport_data_of_issue DATE NOT NULL
+);
+
 CREATE TABLE proxies (
     id SERIAL PRIMARY KEY,
     organization_id INT NOT NULL REFERENCES organizations(id) ON DELETE RESTRICT ON UPDATE CASCADE,
