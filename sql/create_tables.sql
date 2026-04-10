@@ -40,7 +40,7 @@ CREATE TABLE employees (
     passport_series VARCHAR(4) NOT NULL,
     passport_number VARCHAR(6) NOT NULL,
     passport_issued_by TEXT NOT NULL,
-    passport_data_of_issue DATE NOT NULL
+    passport_date_of_issue DATE NOT NULL
 );
 
 CREATE TABLE proxies (
