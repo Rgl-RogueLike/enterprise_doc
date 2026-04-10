@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class ProxyServiceImpl implements ProxyService{
+public class ProxyServiceImpl implements ProxyService {
 
     @Autowired
     private ProxyHeaderRepository proxyHeaderRepository;
@@ -117,7 +117,7 @@ public class ProxyServiceImpl implements ProxyService{
         ProxyHeader header = proxyHeaderRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Proxy not found with id: " + id));
         Organization organization = organizationRepository.findById(request.getOrganizationId())
-                .orElseThrow(()-> new RuntimeException("Organization not found"));
+                .orElseThrow(() -> new RuntimeException("Organization not found"));
         Customer customer = customerRepository.findById(request.getCustomerId())
                 .orElseThrow(() -> new RuntimeException("Customer not found"));
         Employee employee = employeeRepository.findById(request.getEmployeeId())

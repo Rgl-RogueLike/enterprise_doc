@@ -1,6 +1,5 @@
 package com.haritonov.spring.enterprise_doc.product.controller;
 
-import com.haritonov.spring.enterprise_doc.document.dto.UpdateProxyRequest;
 import com.haritonov.spring.enterprise_doc.product.dto.CreateProductRequest;
 import com.haritonov.spring.enterprise_doc.product.dto.ProductResponse;
 import com.haritonov.spring.enterprise_doc.product.dto.UpdateProductRequest;
