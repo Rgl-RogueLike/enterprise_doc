@@ -28,6 +28,5 @@ public class CreateProxyRequest {
     @JsonFormat(pattern = "dd-MM-yyyy")
     private LocalDate isValidUntil;
 
-    @NotEmpty(message = "Body items cannot be empty")
     private List<ProxyItemRequest> bodyItems;
 }
