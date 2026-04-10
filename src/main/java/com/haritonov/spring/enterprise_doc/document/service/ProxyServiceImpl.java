@@ -151,4 +151,32 @@ public class ProxyServiceImpl implements ProxyService {
         }
         proxyHeaderRepository.deleteById(id);
     }
+
+    @Override
+    @Transactional
+    public void updateBodyItems(Integer id, List<ProxyItemRequest> items) {
+        ProxyHeader header = proxyHeaderRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Proxy not found with id: " + id));
+        header.getBodyItems().clear();
+
+        if (items == null || items.isEmpty()) {
+            proxyHeaderRepository.save(header);
+            return;
+        }
+
+        List<ProxyBodyItem> newItems = new ArrayList<>();
+        for (ProxyItemRequest itemRequest : items) {
+            Product product = productRepository.findById(itemRequest.getProductId())
+                    .orElseThrow(() -> new RuntimeException("Product not found with id: " + itemRequest.getProductId()));
+
+            ProxyBodyItem item = new ProxyBodyItem();
+            item.setProduct(product);
+            item.setProxyHeader(header);
+            item.setProductAmount(itemRequest.getProductAmount());
+            newItems.add(item);
+        }
+
+        header.setBodyItems(newItems);
+        proxyHeaderRepository.save(header);
+    }
 }

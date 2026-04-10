@@ -1,6 +1,7 @@
 package com.haritonov.spring.enterprise_doc.document.service;
 
 import com.haritonov.spring.enterprise_doc.document.dto.CreateProxyRequest;
+import com.haritonov.spring.enterprise_doc.document.dto.ProxyItemRequest;
 import com.haritonov.spring.enterprise_doc.document.dto.ProxyResponse;
 import com.haritonov.spring.enterprise_doc.document.dto.UpdateProxyRequest;
 
@@ -17,4 +18,6 @@ public interface ProxyService {
     ProxyResponse update(Integer id, UpdateProxyRequest request);
 
     void delete(Integer id);
+
+    void updateBodyItems(Integer id, List<ProxyItemRequest> items);
 }
