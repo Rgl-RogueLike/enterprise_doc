@@ -20,9 +20,9 @@ public class AccountServiceImpl implements AccountService {
     private AccountResponse mapToResponse(Account account) {
         AccountResponse response = new AccountResponse();
         response.setId(account.getId());
-        response.setAccount(response.getAccount());
-        response.setBankName(response.getBankName());
-        response.setBankIdentityNumber(response.getBankIdentityNumber());
+        response.setAccount(account.getAccount());
+        response.setBankName(account.getBankName());
+        response.setBankIdentityNumber(account.getBankIdentityNumber());
         return response;
     }
 
